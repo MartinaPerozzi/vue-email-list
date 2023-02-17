@@ -37,10 +37,14 @@
 	<div id="app">
 
 		<div class="container">
-			<div class="Random Emails">
-				<button class="btn btn-primary rounded-pill mt3" @click="generatEmails()">Genera Email</button>
-				<ul v-for="email in emailsCopy">
-					<li></li>
+			<button class="btn btn-primary rounded-pill mt3 mb-3" @click="generatEmails()">Genera Email</button>
+			<div class="Random Emails d-flex flex-column align-items-start">
+				<!-- Se le email sono 10 come richiesto -->
+				<ul v-if="emails.length==10">
+					<!-- Crea tanti quanti elementi <li> -->
+					<li v-for="email in emails" class="pb-2 pt-2">
+						{{email}}
+					</li>
 
 				</ul>
 			</div>
